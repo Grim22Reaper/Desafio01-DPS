@@ -106,16 +106,38 @@ export default function CartPage() {
     setShowPreview(true);
   };
 
-  const handleConfirmAndDownload = () => {
+  const handleConfirmAndDownload = async () => {
     setLoading(true);
     try {
+      // 1. Generar y descargar el PDF localmente
       generatePDFInvoice();
+
+      // 2. Enviar el correo electrónico mediante tu API de Resend
+      const res = await fetch("/api/send-invoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userEmail: user?.email,
+          userName: user?.name || "Cliente",
+          items: cartItems,
+          total: total,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        console.error("Error al enviar el correo desde la API:", data);
+        toast.error("El PDF se descargó, pero hubo un error al enviar el correo.");
+      } else {
+        toast.success("¡Compra exitosa! Factura descargada y enviada a tu correo.");
+      }
+
+      // 3. Limpiar carrito y redirigir
       clearCart();
-      toast.success("¡Compra exitosa! Factura descargada y carrito vaciado.");
       setTimeout(() => router.push("/"), 2000);
     } catch (error) {
       console.error(error);
-      toast.error("Error al procesar la compra o generar el PDF.");
+      toast.error("Error al procesar la compra o enviar la factura.");
       setLoading(false);
     }
   };
@@ -270,7 +292,7 @@ export default function CartPage() {
                 disabled={loading}
                 className="w-1/2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition shadow-md text-sm disabled:opacity-50"
               >
-                {loading ? "Generando..." : "Confirmar y Descargar PDF"}
+                {loading ? "Procesando..." : "Confirmar y Descargar PDF"}
               </button>
             </div>
           </div>
