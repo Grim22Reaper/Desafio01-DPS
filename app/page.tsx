@@ -13,7 +13,6 @@ export default function StoreHomePage() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [isReady, setIsReady] = useState(false);
   
-  // Estado local para manejar las cantidades seleccionadas por producto antes de agregar
   const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
 
   useEffect(() => {
@@ -59,7 +58,6 @@ export default function StoreHomePage() {
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
     
-    // Recalcular contador total general del carrito
     const totalCount = existingCart.reduce((acc: number, item: any) => acc + item.quantity, 0);
     setCartCount(totalCount);
 
@@ -79,7 +77,7 @@ export default function StoreHomePage() {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-between">
       <header className="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center shadow-sm sticky top-0 z-10">
         <div className="flex items-center gap-2">
-          <span className="text-xl font-black text-black"> E-commerce</span>
+          <span className="text-xl font-black text-black">E-commerce</span>
         </div>
 
         <div className="flex items-center gap-4">
@@ -96,7 +94,7 @@ export default function StoreHomePage() {
                     onClick={() => router.push("/cart")}
                     className="relative bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition"
                   >
-                    Carrito 🛒
+                    Carrito 
                     {cartCount > 0 && (
                       <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
                         {cartCount}
@@ -173,28 +171,37 @@ export default function StoreHomePage() {
                   <p className="text-xl font-extrabold text-gray-900">${product.price.toFixed(2)}</p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
-                  <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden bg-gray-50">
+                <div className="mt-6 pt-4 border-t border-gray-100 space-y-3">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden bg-gray-50">
+                      <button
+                        onClick={() => handleQtyChange(product.id, -1)}
+                        className="px-3 py-1.5 text-gray-600 hover:bg-gray-200 font-bold transition"
+                      >
+                        -
+                      </button>
+                      <span className="px-3 text-sm font-bold text-gray-800">{currentQty}</span>
+                      <button
+                        onClick={() => handleQtyChange(product.id, 1)}
+                        className="px-3 py-1.5 text-gray-600 hover:bg-gray-200 font-bold transition"
+                      >
+                        +
+                      </button>
+                    </div>
+
                     <button
-                      onClick={() => handleQtyChange(product.id, -1)}
-                      className="px-3 py-1.5 text-gray-600 hover:bg-gray-200 font-bold transition"
+                      onClick={() => handleAddToCart(product)}
+                      className="flex-1 bg-gray-900 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-xl transition shadow-sm text-sm"
                     >
-                      -
-                    </button>
-                    <span className="px-3 text-sm font-bold text-gray-800">{currentQty}</span>
-                    <button
-                      onClick={() => handleQtyChange(product.id, 1)}
-                      className="px-3 py-1.5 text-gray-600 hover:bg-gray-200 font-bold transition"
-                    >
-                      +
+                      Añadir
                     </button>
                   </div>
 
                   <button
-                    onClick={() => handleAddToCart(product)}
-                    className="flex-1 bg-gray-900 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-xl transition shadow-sm text-sm"
+                    onClick={() => router.push("/cart")}
+                    className="w-full bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold py-2 rounded-xl transition text-xs flex items-center justify-center gap-1.5"
                   >
-                    Añadir
+                    Ver Carrito 🛒 {cartCount > 0 && `(${cartCount})`}
                   </button>
                 </div>
               </div>
@@ -204,7 +211,7 @@ export default function StoreHomePage() {
       </main>
 
       <footer className="text-center py-6 text-xs text-gray-400 border-t border-gray-200 bg-white">
-        &copy; 2026 Tienda Online. Todos los derechos reservados.
+        &copy; 2026 E-commerce. Todos los derechos reservados.
       </footer>
     </div>
   );
