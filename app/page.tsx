@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { products } from "@/data/products";
@@ -11,12 +11,16 @@ export default function StoreHomePage() {
   const router = useRouter();
   const [cartCount, setCartCount] = useState(0);
   
-  // Estado para controlar la renderización del cliente de forma fluida
-  const [isReady, setIsReady] = useState(false);
+  // Estado para controlar la categoría seleccionada ("Todos" por defecto)
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
 
-  useEffect(() => {
-    setIsReady(true);
-  }, []);
+  // Extraemos las categorías únicas de tus productos de forma dinámica
+  const categories = ["Todos", ...Array.from(new Set(products.map((p) => p.category)))];
+
+  // Filtramos los productos según la categoría elegida
+  const filteredProducts = selectedCategory === "Todos"
+    ? products
+    : products.filter((p) => p.category === selectedCategory);
 
   const handleAddToCart = (productName: string) => {
     if (!user) {
@@ -42,46 +46,39 @@ export default function StoreHomePage() {
       {/* Barra de navegación de la tienda */}
       <header className="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center shadow-sm sticky top-0 z-10">
         <div className="flex items-center gap-2">
-          <span className="text-xl font-black text-blue-600">TiendaOnline</span>
+          <span className="text-xl font-black text-black"> E-commerce</span>
         </div>
 
         <div className="flex items-center gap-4">
-          {/* Si aún no está listo el cliente, mostramos un espacio estático neutral para evitar el choque de HTML */}
-          {!isReady ? (
-            <div className="h-9 w-28 bg-gray-100 animate-pulse rounded-lg" />
-          ) : (
-            <>
-              {user && (
-                <div className="flex items-center gap-3">
-                  <span className="text-sm text-gray-700 hidden sm:inline">
-                    Hola, <b>{user.name}</b>
-                  </span>
-                  <button
-                    onClick={() => router.push("/cart")}
-                    className="relative bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition"
-                  >
-                    Carrito 🛒
-                    {cartCount > 0 && (
-                      <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
-                        {cartCount}
-                      </span>
-                    )}
-                  </button>
-                </div>
-              )}
-
+          {user && (
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-700 hidden sm:inline">
+                Hola, <b>{user.name}</b>
+              </span>
               <button
-                onClick={handleAuthAction}
-                className={`text-sm font-semibold px-4 py-2 rounded-lg transition ${
-                  user
-                    ? "bg-red-50 hover:bg-red-100 text-red-600"
-                    : "bg-blue-600 hover:bg-blue-700 text-white shadow-md"
-                }`}
+                onClick={() => router.push("/cart")}
+                className="relative bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition"
               >
-                {user ? "Cerrar Sesión" : "Iniciar Sesión"}
+                Carrito 
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                    {cartCount}
+                  </span>
+                )}
               </button>
-            </>
+            </div>
           )}
+
+          <button
+            onClick={handleAuthAction}
+            className={`text-sm font-semibold px-4 py-2 rounded-lg transition ${
+              user
+                ? "bg-red-50 hover:bg-red-100 text-red-600"
+                : "bg-blue-600 hover:bg-blue-700 text-white shadow-md"
+            }`}
+          >
+            {user ? "Cerrar Sesión" : "Iniciar Sesión"}
+          </button>
         </div>
       </header>
 
@@ -94,8 +91,26 @@ export default function StoreHomePage() {
           </p>
         </div>
 
+        {/* Botones de Filtro por Categoría */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm ${
+                selectedCategory === category
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid de Productos Filtrados */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <div
               key={product.id}
               className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between hover:shadow-md transition"
