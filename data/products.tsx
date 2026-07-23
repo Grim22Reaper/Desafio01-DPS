@@ -6,7 +6,7 @@ export const products: Product[] = [
     name: "MSI Gaming Laptop",
     price: 1200,
     category: "Laptops",
-    image: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fi5.walmartimages.com%2Fseo%2FMSI-GL65-9SC-002-15-6-Gaming-Laptop-Intel-Core-i5-9300H-NVIDIA-GeForce-GTX-1650-8GB-512GB-NVMe-SSD_a208fd3b-0243-4c49-ba47-cb8c4d1b93ec_1.44aac6ee92f33fc9cefc9206efb92529.jpeg&sp=1784597645T1a4403cf13397b28a68657f759068dcb37fbf088d9508dd6f9e355bbb2f727cb",
+    image: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/04/msi-thin-gf63-15-6-144hz-gaming-laptop.jpg",
     description: "Laptop de alta potencia para el desarollo de software y juegos de ultima generacion"
     },
     {
@@ -14,7 +14,7 @@ export const products: Product[] = [
         name: "Apple MacBook Pro",
         price: 2000,
         category: "Laptops",
-        image: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fwww.notebookcheck.net%2Ffileadmin%2FNotebooks%2FApple%2FMacBook_Pro_14_2024_M4%2FIMG_7747.JPG&sp=1784597939Tefe608c557e088f38d8102bd029d8e7e16d510b0a4b68ba52c972ed7e16dc9d9",
+        image: "https://www.notebookcheck.net/fileadmin/Notebooks/Apple/MacBook_Pro_14_2024_M4/IMG_7747.JPG",
         description: "Laptop de alta potencia para el desarollo de edicion de videos y renderizado de imagenes"
     },
     {
@@ -22,7 +22,7 @@ export const products: Product[] = [
         name: "teclado mecanico RedDragon K552 KUMARA",
         price: 50,
         category: "Perifericos",
-        image: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.gOvJfY4Ar1bqxGHzecgxIwHaDg%3Fr%3D0%26pid%3DApi&sp=1784598162Te0c4803485a43f8c76bf1c4f3ffb4092a6131317f4dbcdcfebdcb1a0e8bbaa5e",
+        image: "https://m.media-amazon.com/images/I/61gRw-ooKrL._AC_SL1500_.jpg",
         description: "Teclado mecanico con retroiluminacion RGB y switches azules para una experiencia de escritura y juego satisfactoria"
     },
     {
@@ -30,7 +30,7 @@ export const products: Product[] = [
         name: "Mouse Gamer Logitech G502 HERO",
         price: 80,
         category: "Perifericos",
-        image: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.6Er7Q5ayAQXE9x12Te_geAHaHa%3Fr%3D0%26pid%3DApi&sp=1784598313T39f37bad3f700791f31990da8a98b7bf2d05527d1c9f3c04f15b7b48b04a1a91",
+        image: "https://ctronicmgta.com/wp/wp-content/uploads/2021/03/71O23Hqq3jL._AC_SL1500_.jpg",
         description: "Mouse gamer con sensor HERO de alta precision y 11 botones programables para una experiencia de juego personalizada"
     },
     {
@@ -38,7 +38,7 @@ export const products: Product[] = [
         name: "Monitor Gamer ASUS ROG Swift PG279Q",
         price: 300,
         category: "Monitores",
-        image: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.27zpmhqV41L2bvN3PDRaQgHaHa%3Fr%3D0%26pid%3DApi&sp=1784598440Td315a195a1ddeb707648e11fb2b1838e95904d5c6c849c0247663abd84123cb5",
+        image: "https://hotsite.pichau.com.br/descricao/Asus/PG279Q/PG279Q.png",
         description: "Monitor gamer con pantalla de 27 pulgadas y tasa de refresco de 144Hz para una experiencia de juego inmersiva"
     },
     {
@@ -46,7 +46,7 @@ export const products: Product[] = [
         name: "Audifonos Gamer SteelSeries Arctis 7",
         price: 150,
         category: "Perifericos",
-        image: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.vrkJspYg7UVFCO4A4tZOnAHaHa%3Fr%3D0%26pid%3DApi&sp=1784598481Td08a6d6b854eb277c41c6594017fa597566082ca00632b123beb05bbaa8c5777",
+        image: "https://media.spdigital.cl/__sized__/products/v9unro10_aba82f92-thumbnail-1080x1080-70.jpg",
         description: "Audifonos gamer con calidad de sonido de alta fidelidad y cancelacion de ruido para una experiencia de juego inmersiva"
     },
     {
@@ -54,7 +54,7 @@ export const products: Product[] = [
         name: "Lenovo Legion 5 Pro",
         price: 1350,
         category: "Laptops",
-        image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302",
+        image: "https://microless.com/cdn/products/e1c6babc1373e8dc5063e90a8f781a54-hi.jpg",
         description: "Laptop orientada a e-sports con procesador Ryzen y excelente sistema de refrigeración"
     },
     {
@@ -62,7 +62,7 @@ export const products: Product[] = [
         name: "Dell XPS 13",
         price: 1100,
         category: "Laptops",
-        image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45",
+        image: "https://d.techtimes.com/en/full/469445/xps.png?w=836&f=6828181a6263e38a7eb9e2a0a5c1842f",
         description: "Ultrabook ligera y potente con pantalla InfinityEdge ideal para productividad"
     },
     {
@@ -70,7 +70,7 @@ export const products: Product[] = [
         name: "Teclado Keychron K2 Inalámbrico",
         price: 90,
         category: "Perifericos",
-        image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3",
+        image: "https://cdn.shopify.com/s/files/1/0617/1534/9670/files/Keychron-K2-wireless-mechanical-keyboard-1.jpg?v=1716026568",
         description: "Teclado mecánico compacto con conectividad Bluetooth y cableada para Mac y Windows"
     },
     {
@@ -78,7 +78,7 @@ export const products: Product[] = [
         name: "Mouse Razer DeathAdder V3",
         price: 70,
         category: "Perifericos",
-        image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7",
+        image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6531/6531757cv12d.jpg",
         description: "Mouse ergonómico ultraligero de alta gama para shooters competitivos"
     },
     {
@@ -86,7 +86,7 @@ export const products: Product[] = [
         name: "Monitor UltraWide LG 34\"",
         price: 450,
         category: "Monitores",
-        image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf",
+        image: "https://www.lg.com/content/dam/channel/wcms/ca_en/images/monitors/ultrawide/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-03-2010.jpg/_jcr_content/renditions/thum-1600x1062.jpeg",
         description: "Monitor curvo ultrawide ideal para multitarea, programación y diseño gráfico"
     },
     {
@@ -94,7 +94,7 @@ export const products: Product[] = [
         name: "Monitor BenQ Zowie 240Hz",
         price: 330,
         category: "Monitores",
-        image: "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+        image: "https://m.media-amazon.com/images/I/71-wFyD1QtS._AC_SL1500_.jpg",
         description: "Monitor optimizado para deportes electrónicos con tiempo de respuesta ultra rápido"
     },
     {
@@ -102,7 +102,7 @@ export const products: Product[] = [
         name: "Microfono HyperX QuadCast",
         price: 130,
         category: "Perifericos",
-        image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc",
+        image: "https://gigaclic.cl/wp-content/uploads/2021/09/boxhyperx1-c0ed12c80c773160e215899993895883-1024-1024-1024x1024.jpg",
         description: "Micrófono condensador USB con suspensión antivibración y luces LED para streaming"
     },
     {
@@ -110,7 +110,7 @@ export const products: Product[] = [
         name: "Tarjeta Grafica NVIDIA RTX 4070",
         price: 650,
         category: "Componentes",
-        image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7",
+        image: "https://media.ldlc.com/r1600/ld/products/00/06/03/07/LD0006030711.jpg",
         description: "Tarjeta gráfica de última generación con DLSS 3 y trazado de rayos avanzado"
     },
     {
@@ -118,7 +118,7 @@ export const products: Product[] = [
         name: "Procesador AMD Ryzen 7 7700X",
         price: 320,
         category: "Componentes",
-        image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086",
+        image: "https://www.tpstech.in/cdn/shop/products/AMD_Ryzen_7_7700X_Desktop_Processor_From_TPSTech_06.jpg?v=1664455603&width=1445",
         description: "Procesador de 8 núcleos y 16 hilos ideal para gaming y renderizado pesado"
     },
     {
@@ -126,7 +126,7 @@ export const products: Product[] = [
         name: "Memoria RAM Corsair Vengeance 32GB",
         price: 105,
         category: "Componentes",
-        image: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F81EEpt-xy0L._AC_SL1500_.jpg&sp=1784600241T675270582a8e6cd539180770ae58bf72e88a7202fad3f8c265d70b7fd1070032",
+        image: "https://m.media-amazon.com/images/I/71e6YWJio-L._AC_.jpg",
         description: "Kit de memoria RAM DDR5 de alto rendimiento con disipador térmico de aluminio"
     },
     {
@@ -134,7 +134,7 @@ export const products: Product[] = [
         name: "Disco SSD NVMe M.2 2TB Samsung",
         price: 160,
         category: "Componentes",
-        image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b",
+        image: "https://cdn.shopify.com/s/files/1/0551/1253/2125/products/SamsungSSD980PROM.2PCIeNVMe2TB-1_1600x.png?v=1638098313",
         description: "Unidad de estado sólido ultrarrápida para carga instantánea de juegos y sistema operativo"
     },
     {
@@ -142,7 +142,7 @@ export const products: Product[] = [
         name: "Silla Gamer Secretlab Titan",
         price: 490,
         category: "Perifericos",
-        image: "https://images.unsplash.com/photo-1598550476439-6847785fcea6",
+        image: "https://images.secretlab.co/theme/common/social_meta_og_titan_evo_2022_series-min.jpg",
         description: "Silla ergonómica de alta calidad con soporte lumbar ajustable y acabados premium"
     },
     {
@@ -150,7 +150,7 @@ export const products: Product[] = [
         name: "Webcam Logitech C920s Pro HD",
         price: 70,
         category: "Perifericos",
-        image: "https://images.unsplash.com/photo-1583394838336-acd977736f90",
+        image: "https://cdn2.electronicscrazy.sg/Productimage/2022-01-0308-01-3870.webp",
         description: "Cámara web con resolución 1080p y cubierta de privacidad física para videollamadas"
     },
     {
@@ -158,7 +158,7 @@ export const products: Product[] = [
         name: "Kit de Refrigeracion Liquida NZXT Kraken",
         price: 140,
         category: "Componentes",
-        image: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c",
+        image: "https://acf.geeknetic.es/cpi/imgp/products/7995/7995-nzxt-kraken-elite-360-rgb-kit-de-refrigeracion-liquida-1716303745.png",
         description: "Sistema de enfriamiento líquido para CPU con pantalla LCD personalizable"
     }
 ];
