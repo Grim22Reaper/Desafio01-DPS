@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Desafío Práctico 01 - E-commerce (React, TypeScript & Next.js)
 
-## Getting Started
+Aplicación web de comercio electrónico desarrollada como parte del **Primer Desafío Práctico (10%)** de la asignatura **Diseño y Programación de Software Multiplataforma (DPS)** de la Universidad Don Bosco[cite: 1].
 
-First, run the development server:
+## Enlaces del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Sitio Web Publicado (Vercel):** https://desafio01-dps-blue.vercel.app
+- **Video Demostrativo (Demo):** https://drive.google.com/file/d/1j44V3S9H4--kpT--j5LOZ0SIfqcWZTSy/view?usp=sharing
+  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Características Principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Autenticación:** Sistema integrado de Login y Registro de usuarios con validaciones de formulario.
+2. **Catálogo Dinámico:** Visualización de un catálogo con 20 artículos tecnológicos (laptops, periféricos y componentes de hardware), fuertemente tipados con TypeScript mediante `interface`/`type`.
+3. **Carrito de Compras Completo:**
+   - Gestión de agregar, modificar cantidades (incrementar/decrementar) y eliminar productos.
+   - **Persistencia de datos:** El carrito se mantiene intacto al refrescar la página gracias al uso de `localStorage`.
+   - **UX Avanzada:** Mensajes de confirmación y alertas personalizadas utilizando librerías modernas de notificaciones.
+4. **Optimización de Imágenes:** Posicionamiento estructurado a la izquierda del nombre e implementación obligatoria de `next/image` para el rendimiento visual.
+5. **Generación de Factura:** Creación automatizada de factura electrónica tras completar la compra.
+6. **Envío por Correo Electrónico:** Integración de rutas de API backend en Next.js con el servicio de **Resend** para el despacho de correos transaccionales.
+7. **Diseño Responsivo (Mobile-First):** Interfaz adaptada a múltiples dispositivos con un diseño limpio y moderno.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+##  Tecnologías Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend:** React, Next.js (App Router), TypeScript, Tailwind CSS.
+- **Gestión de Estado & UI:** Hooks de React, `localStorage`, Sonner.
+- **Backend / API Routes:** Endpoints nativos de Next.js.
+- **Servicios Externos:** Resend (API de correo electrónico).
+- **Despliegue Continuo:** Vercel conectado con el repositorio oficial de GitHub.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Instrucciones de Instalación y Ejecución Local
 
-## Deploy on Vercel
+Si deseas clonar y ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/Grim22Reaper/desafio01-dps.git
+   cd desafio01-dps
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Instalar las dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Configurar las variables de entorno:**
+   Crea un archivo `.env.local` en la raíz del proyecto y añade tu llave de API de Resend:
+   ```env
+   RESEND_API_KEY=tu_clave_de_resend_aqui
+   ```
+
+4. **Ejecutar el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para visualizar la aplicación.
+
+---
+
+## Autor
+
+- **Estudiante:** Pablo  Amilcar Mariona De La O
+- **Carnet: MD221906
+- **Asignatura:** Diseño y Programación de Software Multiplataforma 
+- **Universidad Don Bosco (UDB)**
