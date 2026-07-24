@@ -1,7 +1,5 @@
 # Desafío Práctico 01 - E-commerce (React, TypeScript & Next.js)
 
-Aplicación web de comercio electrónico desarrollada como parte del **Primer Desafío Práctico (10%)** de la asignatura **Diseño y Programación de Software Multiplataforma (DPS)** de la Universidad Don Bosco[cite: 1].
-
 ## Enlaces del Proyecto
 
 - **Sitio Web Publicado (Vercel):** https://desafio01-dps-blue.vercel.app
